@@ -82,7 +82,7 @@
     <div id="scroll-container" class="h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden">
 
         <!-- ===== HEADER / NAVBAR ===== -->
-        <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out p-6">
+        <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out p-4 sm:p-6">
             <div class="container mx-auto flex justify-between items-center">
                 <div class="text-2xl font-bold tracking-wider relative h-8 w-40">
                     <a href="#home" id="logo-main" class="absolute top-0 left-0 transition-opacity duration-300 ease-in-out">Milnandy.</a>
@@ -94,6 +94,8 @@
                     <a href="#projects" class="font-medium nav-item-hover">Projects</a>
                     <a href="#contact" class="font-medium nav-item-hover">Contact</a>
                 </nav>
+                 <!-- Mobile Menu Button - can be added later -->
+                 <!-- <div class="md:hidden"> ... </div> -->
                 <div class="flex items-center">
                     <button id="theme-toggle" class="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-buff dark:focus:ring-teagreen">
                         <svg id="theme-icon-sun" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
@@ -117,46 +119,54 @@
 
         <!-- ===== MAIN CONTENT ===== -->
         <main>
-            <!-- ===== HERO SECTION ===== -->
-            <section id="home" class="h-screen w-full flex items-center justify-center snap-start">
+            <!-- ===== HERO SECTION (RESPONSIVE) ===== -->
+            <section id="home" class="h-screen min-h-[600px] w-full flex items-center justify-center snap-start">
                 <div class="container mx-auto text-center px-6">
-                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold animate-fade-in-up-1">
+                    <!-- Ukuran font disesuaikan untuk berbagai ukuran layar -->
+                    <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold animate-fade-in-up-1">
                         <span class="neon-text-light dark:neon-text-dark">Milnandy Abrar</span>
                     </h1>
-                    <p class="mt-4 text-xl md:text-2xl font-medium text-buff/80 dark:text-beige/80 animate-fade-in-up-2">Full-Stack Developer</p>
-                    <p class="mt-6 max-w-2xl mx-auto text-lg text-buff/70 dark:text-beige/70 animate-fade-in-up-3">
+                    <!-- Ukuran font dan margin disesuaikan -->
+                    <p class="mt-4 text-lg sm:text-xl md:text-2xl font-medium text-buff/80 dark:text-beige/80 animate-fade-in-up-2">Full-Stack Developer</p>
+                    <p class="mt-6 max-w-lg mx-auto text-base sm:text-lg text-buff/70 dark:text-beige/70 animate-fade-in-up-3">
                         Menciptakan pengalaman digital yang mulus, dari server hingga ke layar Anda.
                     </p>
                     <div class="mt-10 animate-pop-in">
-                        <a href="#projects" class="bg-buff text-cornsilk dark:bg-teagreen dark:text-gray-900 font-bold py-3 px-8 rounded-full transition-all duration-300 ease-in-out hover:bg-opacity-80 dark:hover:bg-opacity-80 transform hover:scale-105">
+                        <a href="#projects" class="bg-buff text-cornsilk dark:bg-teagreen dark:text-gray-900 font-bold py-3 px-6 sm:px-8 rounded-full transition-all duration-300 ease-in-out hover:bg-opacity-80 dark:hover:bg-opacity-80 transform hover:scale-105 text-sm sm:text-base">
                             Lihat Proyek Saya
                         </a>
                     </div>
                 </div>
             </section>
             
-            <!-- ===== ABOUT SECTION ===== -->
-            <section id="about" class="h-screen w-full flex items-center justify-center snap-start bg-papayawhip dark:bg-gray-800 transition-colors duration-500">
+            <!-- ===== ABOUT SECTION (RESPONSIVE) ===== -->
+            <section id="about" class="h-screen min-h-[700px] w-full flex items-center justify-center snap-start bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-16 sm:py-0">
                 <div class="container mx-auto px-6 lg:px-12">
-                    <div class="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
-                        <div class="w-64 h-64 lg:w-80 lg:h-80 flex-shrink-0 animate-fade-in-up-1">
+                    <!-- Mengatur gap dan tata letak agar lebih responsif -->
+                    <div class="flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16">
+                        
+                        <!-- Ukuran gambar disesuaikan untuk layar kecil, sedang, dan besar -->
+                        <div class="w-48 h-48 sm:w-56 sm:h-56 lg:w-80 lg:h-80 flex-shrink-0 animate-fade-in-up-1">
                             <div class="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-buff/50 dark:border-teagreen/50">
                                 <img src="https://via.placeholder.com/320" alt="Foto Profil Milnandy Abrar" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-buff/20 dark:bg-teagreen/20 mix-blend-multiply"></div>
                             </div>
                         </div>
+
                         <div class="text-center lg:text-left max-w-2xl">
-                            <h2 class="text-4xl md:text-5xl font-bold text-buff dark:text-teagreen mb-4 animate-fade-in-up-1">
+                            <!-- Ukuran font judul disesuaikan -->
+                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-buff dark:text-teagreen mb-4 animate-fade-in-up-1">
                                 Tentang Saya
                             </h2>
-                            <p class="text-lg text-buff/80 dark:text-beige/80 mb-6 animate-fade-in-up-2">
+                            <!-- Ukuran font paragraf dan margin disesuaikan -->
+                            <p class="text-base sm:text-lg text-buff/80 dark:text-beige/80 mb-4 sm:mb-6 animate-fade-in-up-2">
                                 Halo, saya Milnandy. Sejak awal, saya selalu terpesona oleh bagaimana sebuah ide dapat diubah menjadi solusi nyata melalui kode. Sebagai <strong>Full-Stack Developer</strong>, saya bersemangat membangun aplikasi web yang tidak hanya fungsional dan kokoh di sisi server, tetapi juga intuitif dan menarik di sisi klien.
                             </p>
-                            <p class="text-lg text-buff/70 dark:text-beige/70 mb-8 animate-fade-in-up-3">
+                            <p class="text-base sm:text-lg text-buff/70 dark:text-beige/70 mb-6 sm:mb-8 animate-fade-in-up-3">
                                 Filosofi saya adalah menulis kode yang bersih dan terukur. Saya percaya bahwa produk digital terbaik lahir dari kolaborasi erat dan pemahaman mendalam terhadap kebutuhan pengguna. Di luar coding, saya gemar menjelajahi tren teknologi baru dan menikmati secangkir kopi sambil merancang proyek berikutnya.
                             </p>
                             <div class="animate-pop-in">
-                                <a href="#your-cv-link.pdf" download class="bg-buff text-cornsilk dark:bg-teagreen dark:text-gray-900 font-bold py-3 px-8 rounded-full transition-all duration-300 ease-in-out hover:bg-opacity-80 dark:hover:bg-opacity-80 transform hover:scale-105">
+                                <a href="#your-cv-link.pdf" download class="bg-buff text-cornsilk dark:bg-teagreen dark:text-gray-900 font-bold py-3 px-8 rounded-full transition-all duration-300 ease-in-out hover:bg-opacity-80 dark:hover:bg-opacity-80 transform hover:scale-105 text-sm sm:text-base">
                                     Unduh CV Saya
                                 </a>
                             </div>
