@@ -91,8 +91,8 @@
                 <!-- Dalam <header> -->
                 <nav id="nav-menu" class="hidden md:flex items-center space-x-8 transition-opacity duration-300 ease-in-out">
                     <a href="#about-1" class="font-medium nav-item-hover">About</a>
-                    <a href="#skills-frontend" class="font-medium nav-item-hover">Skills</a> <!-- Perubahan di sini -->
-                    <a href="#projects" class="font-medium nav-item-hover">Projects</a>
+                    <a href="#skills-frontend" class="font-medium nav-item-hover">Skills</a>
+                    <a href="#projects-intro" class="font-medium nav-item-hover">Projects</a> <!-- Perubahan di sini -->
                     <a href="#contact" class="font-medium nav-item-hover">Contact</a>
                 </nav>
                  <!-- Mobile Menu Button - can be added later -->
@@ -112,9 +112,10 @@
                 <li><a href="#home" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="home"></a></li>
                 <li><a href="#about-1" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="about-1"></a></li>
                 <li><a href="#about-2" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="about-2"></a></li>
-                <li><a href="#skills-frontend" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="skills-frontend"></a></li> <!-- Tautan baru -->
-                <li><a href="#skills-backend" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="skills-backend"></a></li> <!-- Tautan baru -->
-                <li><a href="#projects" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="projects"></a></li>
+                <li><a href="#skills-frontend" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="skills-frontend"></a></li>
+                <li><a href="#skills-backend" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="skills-backend"></a></li>
+                <li><a href="#projects-intro" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="projects-intro"></a></li> <!-- Tautan baru -->
+                <li><a href="#projects-cards" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="projects-cards"></a></li> <!-- Tautan baru -->
                 <li><a href="#contact" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="contact"></a></li>
             </ul>
         </nav>
@@ -294,32 +295,34 @@
                 </div>
             </section>
 
-            <!-- ===== PROJECTS SECTION ===== -->
-            <section id="projects" class="h-screen w-full flex items-center justify-center snap-start bg-papayawhip dark:bg-gray-800 transition-colors duration-500">
+            <!-- ===== PROJECTS SECTION - PART 1: INTRODUCTION ===== -->
+            <section id="projects-intro" class="min-h-screen w-full flex items-center justify-center snap-center bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-20 md:py-0">
                 <div class="container mx-auto px-6 text-center">
                     <h2 class="text-4xl md:text-5xl font-bold text-buff dark:text-teagreen mb-4 animate-fade-in-up-1">
                         Proyek Pilihan
                     </h2>
-                    <p class="text-lg text-buff/80 dark:text-beige/80 mb-12 max-w-3xl mx-auto animate-fade-in-up-2">
+                    <p class="text-lg text-buff/80 dark:text-beige/80 max-w-3xl mx-auto animate-fade-in-up-2">
                         Beberapa karya yang pernah saya bangun. Setiap proyek adalah sebuah cerita tentang pemecahan masalah dan kreativitas.
                     </p>
+                </div>
+            </section>
 
-                    <!-- Project Cards Grid -->
+            <!-- ===== PROJECTS SECTION - PART 2: CARDS (CENTERING FIX) ===== -->
+            <section id="projects-cards" class="min-h-screen max-h-screen w-full flex items-center justify-center snap-center bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-20 md:py-24">
+                <div class="container mx-auto px-6 pt-12">
+                    <!-- Project Cards Grid (Advanced Responsive Visibility) -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
                         
-                        <!-- Project Card 1 -->
+                        <!-- Project Card 1 (Always Visible) -->
                         <div class="bg-cornsilk dark:bg-gray-900 rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-2 animate-fade-in-up-3">
                             <img src="https://via.placeholder.com/400x250/D4A373/FEFAE0?text=Proyek+Satu" alt="Gambar Proyek Satu" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-bold text-buff dark:text-teagreen mb-2">Nama Proyek Satu</h3>
-                                <p class="text-buff/80 dark:text-beige/80 mb-4 text-sm">Deskripsi singkat tentang proyek ini, menjelaskan tujuannya dan tantangan utama yang berhasil diatasi.</p>
-                                <!-- Tech Stack Tags -->
-                                <div class="flex flex-wrap gap-2 mb-6">
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-bold text-buff dark:text-teagreen mb-2">Nama Proyek Satu</h3>
+                                <p class="text-buff/80 dark:text-beige/80 mb-4 text-sm">Deskripsi singkat tentang proyek ini, menjelaskan tujuannya dan tantangan utama.</p>
+                                <div class="flex flex-wrap justify-center gap-2 mb-6">
                                     <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">React</span>
                                     <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">Node.js</span>
-                                    <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">PostgreSQL</span>
                                 </div>
-                                <!-- Links -->
                                 <div class="flex justify-center space-x-4">
                                     <a href="#" target="_blank" class="text-buff dark:text-teagreen hover:underline font-medium">Live Demo</a>
                                     <a href="#" target="_blank" class="text-buff dark:text-teagreen hover:underline font-medium">Source Code</a>
@@ -327,19 +330,16 @@
                             </div>
                         </div>
 
-                        <!-- Project Card 2 -->
-                        <div class="bg-cornsilk dark:bg-gray-900 rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-2 animate-fade-in-up-3 [animation-delay:0.2s]">
+                        <!-- Project Card 2 (Visible on Tablet and up) -->
+                        <div class="hidden md:block bg-cornsilk dark:bg-gray-900 rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-2 animate-fade-in-up-3 [animation-delay:0.2s]">
                             <img src="https://via.placeholder.com/400x250/CCD5AE/2c2c2c?text=Proyek+Dua" alt="Gambar Proyek Dua" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-bold text-buff dark:text-teagreen mb-2">Nama Proyek Dua</h3>
-                                <p class="text-buff/80 dark:text-beige/80 mb-4 text-sm">Ini adalah proyek lain yang menyoroti keahlian dalam pengembangan antarmuka pengguna yang responsif.</p>
-                                <!-- Tech Stack Tags -->
-                                <div class="flex flex-wrap gap-2 mb-6">
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-bold text-buff dark:text-teagreen mb-2">Nama Proyek Dua</h3>
+                                <p class="text-buff/80 dark:text-beige/80 mb-4 text-sm">Proyek lain yang menyoroti keahlian dalam pengembangan antarmuka pengguna.</p>
+                                <div class="flex flex-wrap justify-center gap-2 mb-6">
                                     <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">Vue.js</span>
-                                    <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">Tailwind CSS</span>
                                     <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">Firebase</span>
                                 </div>
-                                <!-- Links -->
                                 <div class="flex justify-center space-x-4">
                                     <a href="#" target="_blank" class="text-buff dark:text-teagreen hover:underline font-medium">Live Demo</a>
                                     <a href="#" target="_blank" class="text-buff dark:text-teagreen hover:underline font-medium">Source Code</a>
@@ -347,19 +347,16 @@
                             </div>
                         </div>
 
-                        <!-- Project Card 3 -->
-                        <div class="bg-cornsilk dark:bg-gray-900 rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-2 animate-fade-in-up-3 [animation-delay:0.4s]">
-                           <img src="https://via.placeholder.com/400x250/E9EDC9/333333?text=Proyek+Tiga" alt="Gambar Proyek Tiga" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-2xl font-bold text-buff dark:text-teagreen mb-2">Nama Proyek Tiga</h3>
-                                <p class="text-buff/80 dark:text-beige/80 mb-4 text-sm">Sebuah aplikasi full-stack yang kompleks dengan fokus pada manajemen data dan API yang efisien.</p>
-                                <!-- Tech Stack Tags -->
-                                <div class="flex flex-wrap gap-2 mb-6">
+                        <!-- Project Card 3 (Visible on Large Desktop and up) -->
+                        <div class="hidden lg:block bg-cornsilk dark:bg-gray-900 rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-2 animate-fade-in-up-3 [animation-delay:0.4s]">
+                        <img src="https://via.placeholder.com/400x250/E9EDC9/333333?text=Proyek+Tiga" alt="Gambar Proyek Tiga" class="w-full h-48 object-cover">
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-bold text-buff dark:text-teagreen mb-2">Nama Proyek Tiga</h3>
+                                <p class="text-buff/80 dark:text-beige/80 mb-4 text-sm">Aplikasi full-stack kompleks dengan fokus pada manajemen data dan API.</p>
+                                <div class="flex flex-wrap justify-center gap-2 mb-6">
                                     <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">Express.js</span>
                                     <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">MongoDB</span>
-                                    <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">JWT</span>
                                 </div>
-                                <!-- Links -->
                                 <div class="flex justify-center space-x-4">
                                     <a href="#" target="_blank" class="text-buff dark:text-teagreen hover:underline font-medium">Live Demo</a>
                                     <a href="#" target="_blank" class="text-buff dark:text-teagreen hover:underline font-medium">Source Code</a>
@@ -472,8 +469,8 @@
                         <h4 class="text-lg font-semibold text-buff dark:text-teagreen mb-4">Navigasi</h4>
                         <ul class="space-y-3">
                             <li><a href="#about-1" class="hover:text-buff dark:hover:text-teagreen transition-colors">Tentang Saya</a></li>
-                            <li><a href="#skills-frontend" class="hover:text-buff dark:hover:text-teagreen transition-colors">Keahlian</a></li> <!-- Perubahan di sini -->
-                            <li><a href="#projects" class="hover:text-buff dark:hover:text-teagreen transition-colors">Proyek</a></li>
+                            <li><a href="#skills-frontend" class="hover:text-buff dark:hover:text-teagreen transition-colors">Keahlian</a></li>
+                            <li><a href="#projects-intro" class="hover:text-buff dark:hover:text-teagreen transition-colors">Proyek</a></li> <!-- Perubahan di sini -->
                             <li><a href="#contact" class="hover:text-buff dark:hover:text-teagreen transition-colors">Kontak</a></li>
                         </ul>
                     </div>
