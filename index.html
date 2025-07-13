@@ -123,7 +123,7 @@
         <!-- ===== MAIN CONTENT ===== -->
         <main>
             <!-- ===== HERO SECTION (RESPONSIVE) ===== -->
-            <section id="home" class="h-screen min-h-[600px] w-full flex items-center justify-center snap-start">
+            <section id="home" class="h-screen min-h-[100vh] w-full flex items-center justify-center snap-start">
                 <div class="container mx-auto text-center px-6">
                     <!-- Ukuran font disesuaikan untuk berbagai ukuran layar -->
                     <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold animate-fade-in-up-1">
@@ -142,9 +142,12 @@
                 </div>
             </section>
             
-            <!-- ===== ABOUT SECTION - PART 1: INTRODUCTION ===== -->
-            <section id="about-1" class="h-screen min-h-[700px] w-full flex items-center justify-center snap-start bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-16 sm:py-0">
-                <div class="container mx-auto px-6 lg:px-12">
+            <!-- ===== ABOUT SECTION - PART 1: INTRODUCTION (VISUALLY CENTERED) ===== -->
+            <section id="about-1" class="h-screen min-h-[100vh] w-full flex items-center justify-center snap-center bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-16 sm:py-0">
+                
+                <!-- KONTEN DIGESER SEDIKIT KE BAWAH PADA LAYAR BESAR -->
+                <div class="container mx-auto px-6 lg:px-12 lg:translate-y-2"> 
+
                     <div class="flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16">
                         
                         <!-- Profile Picture -->
@@ -169,7 +172,7 @@
             </section>
 
             <!-- ===== ABOUT SECTION - PART 2: PHILOSOPHY & CTA ===== -->
-            <section id="about-2" class="h-screen min-h-[600px] w-full flex items-center justify-center snap-start bg-papayawhip dark:bg-gray-800 transition-colors duration-500">
+            <section id="about-2" class="h-screen min-h-[100vh] w-full flex items-center justify-center snap-center bg-papayawhip dark:bg-gray-800 transition-colors duration-500">
                 <div class="container mx-auto px-6 text-center max-w-3xl">
                     <h3 class="text-3xl sm:text-4xl font-bold text-buff dark:text-teagreen mb-6 animate-fade-in-up-1">
                         Filosofi Kerja Saya
