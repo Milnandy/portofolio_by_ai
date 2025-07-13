@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milnandy Abrar - Full-Stack Developer</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Configuration & CSS -->
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                font-family: 'Inter', sans-serif;
+            }
+            body {
+                @apply bg-cornsilk text-buff;
+            }
+            .dark body {
+                @apply bg-gray-900 text-beige;
+            }
+        }
+        @layer utilities {
+            .neon-text-light {
+                /* Efek cheerful untuk light mode (misal: bayangan lembut) */
+                text-shadow: 2px 2px 4px rgba(212, 163, 115, 0.2);
+            }
+            .dark .neon-text-dark {
+                 /* Efek neon untuk dark mode */
+                text-shadow:
+                    0 0 5px #ccd5ae,
+                    0 0 10px #ccd5ae,
+                    0 0 15px #e9edc9;
+            }
+            .nav-item-hover {
+                @apply transition-transform duration-300 ease-in-out hover:scale-110;
+            }
+        }
+    </style>
+    
+    <script>
+        // Konfigurasi Kustom untuk Tailwind CSS
+        tailwind.config = {
+            darkMode: 'class', // Mengaktifkan mode gelap berbasis class
+            theme: {
+                extend: {
+                    colors: {
+                        teagreen: '#CCD5AE',
+                        beige: '#E9EDC9',
+                        cornsilk: '#FEFAE0',
+                        papayawhip: '#FAEDCD',
+                        buff: '#D4A373',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        popIn: {
+                             '0%': { opacity: '0', transform: 'scale(0.9)' },
+                             '100%': { opacity: '1', transform: 'scale(1)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in-up-1': 'fadeInUp 0.8s ease-out 0.2s both',
+                        'fade-in-up-2': 'fadeInUp 0.8s ease-out 0.4s both',
+                        'fade-in-up-3': 'fadeInUp 0.8s ease-out 0.6s both',
+                        'pop-in': 'popIn 0.6s ease-out 0.8s both',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="transition-colors duration-500">
+
+    <!-- Main Container for Scroll Snap -->
+    <div class="h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden">
+
+        <!-- ===== HEADER / NAVBAR ===== -->
+        <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out p-6">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Logo -->
+                <div class="text-2xl font-bold tracking-wider">
+                    <a href="#home" id="logo-main" class="transition-opacity duration-300">Milnandy.</a>
+                    <a href="#home" id="logo-scrolled" class="absolute transition-opacity duration-300 opacity-0">MA</a>
+                </div>
+
+                <!-- Navigation -->
+                <nav id="nav-menu" class="hidden md:flex items-center space-x-8 transition-opacity duration-300">
+                    <a href="#about" class="font-medium nav-item-hover">About</a>
+                    <a href="#skills" class="font-medium nav-item-hover">Skills</a>
+                    <a href="#projects" class="font-medium nav-item-hover">Projects</a>
+                    <a href="#contact" class="font-medium nav-item-hover">Contact</a>
+                </nav>
+
+                <!-- Theme Toggle -->
+                <div class="flex items-center">
+                    <button id="theme-toggle" class="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-buff dark:focus:ring-teagreen">
+                        <!-- Sun Icon for Dark Mode Toggle -->
+                        <svg id="theme-icon-sun" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <!-- Moon Icon for Light Mode Toggle -->
+                        <svg id="theme-icon-moon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- ===== RIGHT SIDE DOT NAVIGATION ===== -->
+        <nav class="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden md:block">
+            <ul class="flex flex-col space-y-4">
+                <li><a href="#about" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-transform duration-300 ease-in-out hover:scale-125" data-section="about"></a></li>
+                <li><a href="#skills" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-transform duration-300 ease-in-out hover:scale-125" data-section="skills"></a></li>
+                <li><a href="#projects" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-transform duration-300 ease-in-out hover:scale-125" data-section="projects"></a></li>
+                <li><a href="#contact" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-transform duration-300 ease-in-out hover:scale-125" data-section="contact"></a></li>
+            </ul>
+        </nav>
+
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main>
+            <!-- ===== HERO SECTION ===== -->
+            <section id="home" class="h-screen w-full flex items-center justify-center snap-start">
+                <div class="container mx-auto text-center px-6">
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold animate-fade-in-up-1">
+                        <span class="neon-text-light dark:neon-text-dark">Milnandy Abrar</span>
+                    </h1>
+                    <p class="mt-4 text-xl md:text-2xl font-medium text-buff/80 dark:text-beige/80 animate-fade-in-up-2">Full-Stack Developer</p>
+                    <p class="mt-6 max-w-2xl mx-auto text-lg text-buff/70 dark:text-beige/70 animate-fade-in-up-3">
+                        Menciptakan pengalaman digital yang mulus, dari server hingga ke layar Anda.
+                    </p>
+                    <div class="mt-10 animate-pop-in">
+                        <a href="#projects" class="bg-buff text-cornsilk dark:bg-teagreen dark:text-gray-900 font-bold py-3 px-8 rounded-full transition-all duration-300 ease-in-out hover:bg-opacity-80 dark:hover:bg-opacity-80 transform hover:scale-105">
+                            Lihat Proyek Saya
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Placeholder untuk seksi berikutnya -->
+            <section id="about" class="h-screen w-full flex items-center justify-center snap-start bg-papayawhip dark:bg-gray-800">
+                <h2 class="text-4xl font-bold">About Section</h2>
+            </section>
+             <section id="skills" class="h-screen w-full flex items-center justify-center snap-start">
+                <h2 class="text-4xl font-bold">Skills Section</h2>
+            </section>
+             <section id="projects" class="h-screen w-full flex items-center justify-center snap-start bg-papayawhip dark:bg-gray-800">
+                <h2 class="text-4xl font-bold">Projects Section</h2>
+            </section>
+             <section id="contact" class="h-screen w-full flex items-center justify-center snap-start">
+                <h2 class="text-4xl font-bold">Contact Section</h2>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIconSun = document.getElementById('theme-icon-sun');
+            const themeIconMoon = document.getElementById('theme-icon-moon');
+            const htmlElement = document.documentElement;
+
+            // Cek dan terapkan tema dari local storage saat memuat
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                htmlElement.classList.add('dark');
+                themeIconSun.classList.remove('hidden');
+            } else {
+                htmlElement.classList.remove('dark');
+                themeIconMoon.classList.remove('hidden');
+            }
+
+            // Fungsi untuk mengganti tema
+            themeToggle.addEventListener('click', () => {
+                htmlElement.classList.toggle('dark');
+                const isDark = htmlElement.classList.contains('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                themeIconSun.classList.toggle('hidden', !isDark);
+                themeIconMoon.classList.toggle('hidden', isDark);
+            });
+
+            // Fungsi untuk mengubah header saat scroll
+            const header = document.getElementById('header');
+            const logoMain = document.getElementById('logo-main');
+            const logoScrolled = document.getElementById('logo-scrolled');
+            const navMenu = document.getElementById('nav-menu');
+            
+            // Menggunakan container scroll, bukan window
+            const scrollContainer = document.querySelector('.snap-y');
+
+            scrollContainer.addEventListener('scroll', () => {
+                if (scrollContainer.scrollTop > 50) {
+                    header.classList.add('bg-cornsilk/80', 'dark:bg-gray-900/80', 'backdrop-blur-sm', 'shadow-md');
+                    logoMain.classList.add('opacity-0');
+                    logoScrolled.classList.remove('opacity-0');
+                    navMenu.classList.add('opacity-0', 'pointer-events-none');
+                } else {
+                    header.classList.remove('bg-cornsilk/80', 'dark:bg-gray-900/80', 'backdrop-blur-sm', 'shadow-md');
+                    logoMain.classList.remove('opacity-0');
+                    logoScrolled.classList.add('opacity-0');
+                    navMenu.classList.remove('opacity-0', 'pointer-events-none');
+                }
+            });
+
+            // Fungsi untuk meng-highlight dot navigasi kanan
+            const sections = document.querySelectorAll('section[id]');
+            const navDots = document.querySelectorAll('.section-dot');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        navDots.forEach(dot => {
+                            dot.classList.remove('bg-buff', 'dark:bg-teagreen', 'scale-125');
+                            dot.classList.add('bg-buff/50', 'dark:bg-teagreen/50');
+
+                            if (dot.getAttribute('data-section') === sectionId) {
+                                dot.classList.add('bg-buff', 'dark:bg-teagreen', 'scale-125');
+                                dot.classList.remove('bg-buff/50', 'dark:bg-teagreen/50');
+                            }
+                        });
+                    }
+                });
+            }, { root: scrollContainer, threshold: 0.6 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+        });
+    </script>
+</body>
+</html>
