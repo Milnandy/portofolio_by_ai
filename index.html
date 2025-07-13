@@ -88,8 +88,9 @@
                     <a href="#home" id="logo-main" class="absolute top-0 left-0 transition-opacity duration-300 ease-in-out">Milnandy.</a>
                     <a href="#home" id="logo-scrolled" class="absolute top-0 left-0 transition-opacity duration-300 ease-in-out opacity-0">MA.</a>
                 </div>
+                <!-- (Dalam <header>) -->
                 <nav id="nav-menu" class="hidden md:flex items-center space-x-8 transition-opacity duration-300 ease-in-out">
-                    <a href="#about" class="font-medium nav-item-hover">About</a>
+                    <a href="#about-1" class="font-medium nav-item-hover">About</a> <!-- Perubahan di sini -->
                     <a href="#skills" class="font-medium nav-item-hover">Skills</a>
                     <a href="#projects" class="font-medium nav-item-hover">Projects</a>
                     <a href="#contact" class="font-medium nav-item-hover">Contact</a>
@@ -106,10 +107,12 @@
         </header>
         
         <!-- ===== RIGHT SIDE DOT NAVIGATION ===== -->
+        <!-- (Ganti seluruh <ul> pada dot navigation Anda dengan ini) -->
         <nav class="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden md:block">
             <ul class="flex flex-col space-y-4">
                 <li><a href="#home" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="home"></a></li>
-                <li><a href="#about" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="about"></a></li>
+                <li><a href="#about-1" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="about-1"></a></li> <!-- Perubahan di sini -->
+                <li><a href="#about-2" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="about-2"></a></li> <!-- Tautan baru -->
                 <li><a href="#skills" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="skills"></a></li>
                 <li><a href="#projects" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="projects"></a></li>
                 <li><a href="#contact" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="contact"></a></li>
@@ -139,13 +142,12 @@
                 </div>
             </section>
             
-            <!-- ===== ABOUT SECTION (RESPONSIVE) ===== -->
-            <section id="about" class="h-screen min-h-[700px] w-full flex items-center justify-center snap-start bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-16 sm:py-0">
+            <!-- ===== ABOUT SECTION - PART 1: INTRODUCTION ===== -->
+            <section id="about-1" class="h-screen min-h-[700px] w-full flex items-center justify-center snap-start bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-16 sm:py-0">
                 <div class="container mx-auto px-6 lg:px-12">
-                    <!-- Mengatur gap dan tata letak agar lebih responsif -->
                     <div class="flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16">
                         
-                        <!-- Ukuran gambar disesuaikan untuk layar kecil, sedang, dan besar -->
+                        <!-- Profile Picture -->
                         <div class="w-48 h-48 sm:w-56 sm:h-56 lg:w-80 lg:h-80 flex-shrink-0 animate-fade-in-up-1">
                             <div class="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-buff/50 dark:border-teagreen/50">
                                 <img src="https://via.placeholder.com/320" alt="Foto Profil Milnandy Abrar" class="w-full h-full object-cover">
@@ -153,24 +155,32 @@
                             </div>
                         </div>
 
+                        <!-- Introduction Text -->
                         <div class="text-center lg:text-left max-w-2xl">
-                            <!-- Ukuran font judul disesuaikan -->
                             <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-buff dark:text-teagreen mb-4 animate-fade-in-up-1">
                                 Tentang Saya
                             </h2>
-                            <!-- Ukuran font paragraf dan margin disesuaikan -->
-                            <p class="text-base sm:text-lg text-buff/80 dark:text-beige/80 mb-4 sm:mb-6 animate-fade-in-up-2">
+                            <p class="text-base sm:text-lg text-buff/80 dark:text-beige/80 animate-fade-in-up-2">
                                 Halo, saya Milnandy. Sejak awal, saya selalu terpesona oleh bagaimana sebuah ide dapat diubah menjadi solusi nyata melalui kode. Sebagai <strong>Full-Stack Developer</strong>, saya bersemangat membangun aplikasi web yang tidak hanya fungsional dan kokoh di sisi server, tetapi juga intuitif dan menarik di sisi klien.
                             </p>
-                            <p class="text-base sm:text-lg text-buff/70 dark:text-beige/70 mb-6 sm:mb-8 animate-fade-in-up-3">
-                                Filosofi saya adalah menulis kode yang bersih dan terukur. Saya percaya bahwa produk digital terbaik lahir dari kolaborasi erat dan pemahaman mendalam terhadap kebutuhan pengguna. Di luar coding, saya gemar menjelajahi tren teknologi baru dan menikmati secangkir kopi sambil merancang proyek berikutnya.
-                            </p>
-                            <div class="animate-pop-in">
-                                <a href="#your-cv-link.pdf" download class="bg-buff text-cornsilk dark:bg-teagreen dark:text-gray-900 font-bold py-3 px-8 rounded-full transition-all duration-300 ease-in-out hover:bg-opacity-80 dark:hover:bg-opacity-80 transform hover:scale-105 text-sm sm:text-base">
-                                    Unduh CV Saya
-                                </a>
-                            </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== ABOUT SECTION - PART 2: PHILOSOPHY & CTA ===== -->
+            <section id="about-2" class="h-screen min-h-[600px] w-full flex items-center justify-center snap-start bg-papayawhip dark:bg-gray-800 transition-colors duration-500">
+                <div class="container mx-auto px-6 text-center max-w-3xl">
+                    <h3 class="text-3xl sm:text-4xl font-bold text-buff dark:text-teagreen mb-6 animate-fade-in-up-1">
+                        Filosofi Kerja Saya
+                    </h3>
+                    <p class="text-base sm:text-lg text-buff/70 dark:text-beige/70 mb-10 animate-fade-in-up-2">
+                        Filosofi saya adalah menulis kode yang bersih dan terukur. Saya percaya bahwa produk digital terbaik lahir dari kolaborasi erat dan pemahaman mendalam terhadap kebutuhan pengguna. Di luar coding, saya gemar menjelajahi tren teknologi baru dan menikmati secangkir kopi sambil merancang proyek berikutnya.
+                    </p>
+                    <div class="animate-pop-in">
+                        <a href="#your-cv-link.pdf" download class="bg-buff text-cornsilk dark:bg-teagreen dark:text-gray-900 font-bold py-3 px-8 rounded-full transition-all duration-300 ease-in-out hover:bg-opacity-80 dark:hover:bg-opacity-80 transform hover:scale-105 text-sm sm:text-base">
+                            Unduh CV Saya
+                        </a>
                     </div>
                 </div>
             </section>
@@ -433,10 +443,11 @@
                     </div>
 
                     <!-- Kolom 2: Tautan Navigasi Cepat -->
+                    <!-- (Dalam <footer>) -->
                     <div class="md:col-span-1 md:justify-self-center">
                         <h4 class="text-lg font-semibold text-buff dark:text-teagreen mb-4">Navigasi</h4>
                         <ul class="space-y-3">
-                            <li><a href="#about" class="hover:text-buff dark:hover:text-teagreen transition-colors">Tentang Saya</a></li>
+                            <li><a href="#about-1" class="hover:text-buff dark:hover:text-teagreen transition-colors">Tentang Saya</a></li> <!-- Perubahan di sini -->
                             <li><a href="#skills" class="hover:text-buff dark:hover:text-teagreen transition-colors">Keahlian</a></li>
                             <li><a href="#projects" class="hover:text-buff dark:hover:text-teagreen transition-colors">Proyek</a></li>
                             <li><a href="#contact" class="hover:text-buff dark:hover:text-teagreen transition-colors">Kontak</a></li>
