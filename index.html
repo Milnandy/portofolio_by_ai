@@ -28,11 +28,9 @@
         }
         @layer utilities {
             .neon-text-light {
-                /* Efek cheerful untuk light mode (misal: bayangan lembut) */
                 text-shadow: 2px 2px 4px rgba(212, 163, 115, 0.2);
             }
             .dark .neon-text-dark {
-                 /* Efek neon untuk dark mode */
                 text-shadow:
                     0 0 5px #ccd5ae,
                     0 0 10px #ccd5ae,
@@ -47,7 +45,7 @@
     <script>
         // Konfigurasi Kustom untuk Tailwind CSS
         tailwind.config = {
-            darkMode: 'class', // Mengaktifkan mode gelap berbasis class
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -86,26 +84,19 @@
         <!-- ===== HEADER / NAVBAR ===== -->
         <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out p-6">
             <div class="container mx-auto flex justify-between items-center">
-                <!-- Logo -->
                 <div class="text-2xl font-bold tracking-wider relative h-8 w-40">
                     <a href="#home" id="logo-main" class="absolute top-0 left-0 transition-opacity duration-300 ease-in-out">Milnandy.</a>
                     <a href="#home" id="logo-scrolled" class="absolute top-0 left-0 transition-opacity duration-300 ease-in-out opacity-0">MA.</a>
                 </div>
-
-                <!-- Navigation -->
                 <nav id="nav-menu" class="hidden md:flex items-center space-x-8 transition-opacity duration-300 ease-in-out">
                     <a href="#about" class="font-medium nav-item-hover">About</a>
                     <a href="#skills" class="font-medium nav-item-hover">Skills</a>
                     <a href="#projects" class="font-medium nav-item-hover">Projects</a>
                     <a href="#contact" class="font-medium nav-item-hover">Contact</a>
                 </nav>
-
-                <!-- Theme Toggle -->
                 <div class="flex items-center">
                     <button id="theme-toggle" class="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-buff dark:focus:ring-teagreen">
-                        <!-- Sun Icon for Dark Mode Toggle -->
                         <svg id="theme-icon-sun" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                        <!-- Moon Icon for Light Mode Toggle -->
                         <svg id="theme-icon-moon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                     </button>
                 </div>
@@ -115,7 +106,6 @@
         <!-- ===== RIGHT SIDE DOT NAVIGATION ===== -->
         <nav class="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden md:block">
             <ul class="flex flex-col space-y-4">
-                <!-- Navigasi untuk HOME/MENU sudah ada di sini -->
                 <li><a href="#home" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="home"></a></li>
                 <li><a href="#about" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="about"></a></li>
                 <li><a href="#skills" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50 transition-all duration-300 ease-in-out hover:scale-125" data-section="skills"></a></li>
@@ -145,21 +135,16 @@
                 </div>
             </section>
             
-                        <!-- ===== ABOUT SECTION ===== -->
+            <!-- ===== ABOUT SECTION ===== -->
             <section id="about" class="h-screen w-full flex items-center justify-center snap-start bg-papayawhip dark:bg-gray-800 transition-colors duration-500">
                 <div class="container mx-auto px-6 lg:px-12">
                     <div class="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
-                        
-                        <!-- Kolom Gambar -->
                         <div class="w-64 h-64 lg:w-80 lg:h-80 flex-shrink-0 animate-fade-in-up-1">
                             <div class="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-buff/50 dark:border-teagreen/50">
-                                <!-- GANTI 'URL_FOTO_ANDA' DENGAN URL GAMBAR PROFIL ANDA -->
                                 <img src="https://via.placeholder.com/320" alt="Foto Profil Milnandy Abrar" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-buff/20 dark:bg-teagreen/20 mix-blend-multiply"></div>
                             </div>
                         </div>
-
-                        <!-- Kolom Teks -->
                         <div class="text-center lg:text-left max-w-2xl">
                             <h2 class="text-4xl md:text-5xl font-bold text-buff dark:text-teagreen mb-4 animate-fade-in-up-1">
                                 Tentang Saya
@@ -176,12 +161,11 @@
                                 </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
 
-                        <!-- ===== SKILLS SECTION ===== -->
+            <!-- ===== SKILLS SECTION ===== -->
             <section id="skills" class="h-screen w-full flex items-center justify-center snap-start">
                 <div class="container mx-auto text-center px-6">
                     <h2 class="text-4xl md:text-5xl font-bold text-buff dark:text-teagreen mb-4 animate-fade-in-up-1">
@@ -190,83 +174,72 @@
                     <p class="text-lg text-buff/80 dark:text-beige/80 mb-12 max-w-3xl mx-auto animate-fade-in-up-2">
                         Berikut adalah teknologi dan alat yang saya kuasai untuk membangun aplikasi web yang modern dan andal, mulai dari antarmuka hingga server.
                     </p>
-
-                    <!-- Skill Categories -->
                     <div class="space-y-12">
-                        <!-- Frontend -->
                         <div>
                             <h3 class="text-2xl font-semibold text-buff/90 dark:text-beige/90 mb-6 animate-fade-in-up-3">Frontend</h3>
                             <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 animate-pop-in">
-                                <!-- Skill Item -->
                                 <div class="group flex flex-col items-center justify-center gap-2 text-center w-24">
                                     <div class="w-20 h-20 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
-                                        <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg> <!-- Placeholder Icon: Ganti dengan ikon relevan -->
+                                        <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg>
                                     </div>
                                     <p class="font-medium text-sm text-buff dark:text-beige">HTML5</p>
                                 </div>
-                                 <!-- Skill Item -->
                                 <div class="group flex flex-col items-center justify-center gap-2 text-center w-24">
                                     <div class="w-20 h-20 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
-                                        <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg> <!-- Placeholder Icon -->
+                                        <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg>
                                     </div>
                                     <p class="font-medium text-sm text-buff dark:text-beige">CSS3</p>
                                 </div>
                                 <div class="group flex flex-col items-center justify-center gap-2 text-center w-24">
                                     <div class="w-20 h-20 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
-                                       <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg> <!-- Placeholder Icon -->
+                                       <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg>
                                     </div>
                                     <p class="font-medium text-sm text-buff dark:text-beige">JavaScript</p>
                                 </div>
                                  <div class="group flex flex-col items-center justify-center gap-2 text-center w-24">
                                     <div class="w-20 h-20 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
-                                        <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg> <!-- Placeholder Icon -->
+                                        <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg>
                                     </div>
                                     <p class="font-medium text-sm text-buff dark:text-beige">React</p>
                                 </div>
                                 <div class="group flex flex-col items-center justify-center gap-2 text-center w-24">
                                     <div class="w-20 h-20 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
-                                        <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg> <!-- Placeholder Icon -->
+                                        <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg>
                                     </div>
                                     <p class="font-medium text-sm text-buff dark:text-beige">Tailwind CSS</p>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Backend & Tools -->
                         <div class="flex flex-col md:flex-row justify-center gap-12 md:gap-24">
-                            <!-- Backend -->
                             <div>
                                 <h3 class="text-2xl font-semibold text-buff/90 dark:text-beige/90 mb-6 animate-fade-in-up-3">Backend</h3>
                                 <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 animate-pop-in">
-                                    <!-- Skill Item -->
                                     <div class="group flex flex-col items-center justify-center gap-2 text-center w-24">
                                         <div class="w-20 h-20 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
-                                            <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg> <!-- Placeholder Icon -->
+                                            <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg>
                                         </div>
                                         <p class="font-medium text-sm text-buff dark:text-beige">Node.js</p>
                                     </div>
                                     <div class="group flex flex-col items-center justify-center gap-2 text-center w-24">
                                         <div class="w-20 h-20 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
-                                           <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg> <!-- Placeholder Icon -->
+                                           <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg>
                                         </div>
                                         <p class="font-medium text-sm text-buff dark:text-beige">Express.js</p>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Tools -->
                             <div>
                                 <h3 class="text-2xl font-semibold text-buff/90 dark:text-beige/90 mb-6 animate-fade-in-up-3">Tools</h3>
                                 <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 animate-pop-in">
-                                    <!-- Skill Item -->
                                     <div class="group flex flex-col items-center justify-center gap-2 text-center w-24">
                                         <div class="w-20 h-20 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
-                                            <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg> <!-- Placeholder Icon -->
+                                            <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg>
                                         </div>
                                         <p class="font-medium text-sm text-buff dark:text-beige">Git</p>
                                     </div>
                                     <div class="group flex flex-col items-center justify-center gap-2 text-center w-24">
                                         <div class="w-20 h-20 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
-                                           <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg> <!-- Placeholder Icon -->
+                                           <svg class="w-10 h-10 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm-1.41 15.41L4.72 13l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8-1.41-1.41z"/></svg>
                                         </div>
                                         <p class="font-medium text-sm text-buff dark:text-beige">Figma</p>
                                     </div>
@@ -277,11 +250,84 @@
                 </div>
             </section>
 
-            <!-- Placeholder untuk seksi berikutnya -->
-             <section id="projects" class="h-screen w-full flex items-center justify-center snap-start bg-papayawhip dark:bg-gray-800">
-                <h2 class="text-4xl font-bold">Projects Section</h2>
+            <!-- ===== PROJECTS SECTION (SEMPURNA) ===== -->
+            <section id="projects" class="h-screen w-full flex items-center justify-center snap-start bg-papayawhip dark:bg-gray-800 transition-colors duration-500">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold text-buff dark:text-teagreen mb-4 animate-fade-in-up-1">
+                        Proyek Pilihan
+                    </h2>
+                    <p class="text-lg text-buff/80 dark:text-beige/80 mb-12 max-w-3xl mx-auto animate-fade-in-up-2">
+                        Beberapa karya yang pernah saya bangun. Setiap proyek adalah sebuah cerita tentang pemecahan masalah dan kreativitas.
+                    </p>
+
+                    <!-- Project Cards Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                        
+                        <!-- Project Card 1 -->
+                        <div class="bg-cornsilk dark:bg-gray-900 rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-2 animate-fade-in-up-3">
+                            <img src="https://via.placeholder.com/400x250/D4A373/FEFAE0?text=Proyek+Satu" alt="Gambar Proyek Satu" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-buff dark:text-teagreen mb-2">Nama Proyek Satu</h3>
+                                <p class="text-buff/80 dark:text-beige/80 mb-4 text-sm">Deskripsi singkat tentang proyek ini, menjelaskan tujuannya dan tantangan utama yang berhasil diatasi.</p>
+                                <!-- Tech Stack Tags -->
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">React</span>
+                                    <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">Node.js</span>
+                                    <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">PostgreSQL</span>
+                                </div>
+                                <!-- Links -->
+                                <div class="flex justify-center space-x-4">
+                                    <a href="#" target="_blank" class="text-buff dark:text-teagreen hover:underline font-medium">Live Demo</a>
+                                    <a href="#" target="_blank" class="text-buff dark:text-teagreen hover:underline font-medium">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 2 -->
+                        <div class="bg-cornsilk dark:bg-gray-900 rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-2 animate-fade-in-up-3 [animation-delay:0.2s]">
+                            <img src="https://via.placeholder.com/400x250/CCD5AE/2c2c2c?text=Proyek+Dua" alt="Gambar Proyek Dua" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-buff dark:text-teagreen mb-2">Nama Proyek Dua</h3>
+                                <p class="text-buff/80 dark:text-beige/80 mb-4 text-sm">Ini adalah proyek lain yang menyoroti keahlian dalam pengembangan antarmuka pengguna yang responsif.</p>
+                                <!-- Tech Stack Tags -->
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">Vue.js</span>
+                                    <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">Tailwind CSS</span>
+                                    <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">Firebase</span>
+                                </div>
+                                <!-- Links -->
+                                <div class="flex justify-center space-x-4">
+                                    <a href="#" target="_blank" class="text-buff dark:text-teagreen hover:underline font-medium">Live Demo</a>
+                                    <a href="#" target="_blank" class="text-buff dark:text-teagreen hover:underline font-medium">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 3 -->
+                        <div class="bg-cornsilk dark:bg-gray-900 rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-2 animate-fade-in-up-3 [animation-delay:0.4s]">
+                           <img src="https://via.placeholder.com/400x250/E9EDC9/333333?text=Proyek+Tiga" alt="Gambar Proyek Tiga" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-2xl font-bold text-buff dark:text-teagreen mb-2">Nama Proyek Tiga</h3>
+                                <p class="text-buff/80 dark:text-beige/80 mb-4 text-sm">Sebuah aplikasi full-stack yang kompleks dengan fokus pada manajemen data dan API yang efisien.</p>
+                                <!-- Tech Stack Tags -->
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">Express.js</span>
+                                    <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">MongoDB</span>
+                                    <span class="text-xs font-semibold bg-buff/20 text-buff/90 dark:bg-teagreen/20 dark:text-teagreen/90 py-1 px-3 rounded-full">JWT</span>
+                                </div>
+                                <!-- Links -->
+                                <div class="flex justify-center space-x-4">
+                                    <a href="#" target="_blank" class="text-buff dark:text-teagreen hover:underline font-medium">Live Demo</a>
+                                    <a href="#" target="_blank" class="text-buff dark:text-teagreen hover:underline font-medium">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </section>
-             <section id="contact" class="h-screen w-full flex items-center justify-center snap-start">
+
+            <section id="contact" class="h-screen w-full flex items-center justify-center snap-start">
                 <h2 class="text-4xl font-bold">Contact Section</h2>
             </section>
 
@@ -312,8 +358,6 @@
                 themeIconMoon.classList.toggle('hidden', isDark);
             });
             
-            // --- LOGIKA HEADER BARU ---
-            // Definisi variabel di luar listener agar bisa diakses
             const header = document.getElementById('header');
             const logoMain = document.getElementById('logo-main');
             const logoScrolled = document.getElementById('logo-scrolled');
@@ -321,23 +365,17 @@
             const scrollContainer = document.getElementById('scroll-container');
 
             scrollContainer.addEventListener('scroll', () => {
-                // Saat di-scroll lebih dari 50px dari atas
                 if (scrollContainer.scrollTop > 50) {
-                    // Ubah logo
                     logoMain.classList.add('opacity-0');
                     logoScrolled.classList.remove('opacity-0');
-                    // Sembunyikan item navigasi
                     navMenu.classList.add('opacity-0', 'pointer-events-none');
-                } else { // Saat kembali di atas
-                    // Kembalikan logo
+                } else {
                     logoMain.classList.remove('opacity-0');
                     logoScrolled.classList.add('opacity-0');
-                    // Tampilkan lagi item navigasi
                     navMenu.classList.remove('opacity-0', 'pointer-events-none');
                 }
             });
 
-            // --- Logika untuk highlight dot navigasi kanan (tidak berubah) ---
             const sections = document.querySelectorAll('section[id]');
             const navDots = document.querySelectorAll('.section-dot');
 
