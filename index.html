@@ -108,14 +108,16 @@
             <ul class="flex flex-col space-y-4">
                 <li><a href="#home" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50" data-section="home"></a></li>
                 
-                <!-- Titik Navigasi About (Menggunakan LG Breakpoint) -->
+                <!-- About Navigation Dots -->
                 <li class="lg:hidden"><a href="#about-1" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50" data-section="about-1"></a></li>
-                <li class="lg:hidden"><a href="#about-2" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50" data-section="about-2"></a></li>
                 <li class="hidden lg:block"><a href="#about-desktop" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50" data-section="about-desktop"></a></li>
                 
-                <!-- Titik navigasi lainnya -->
-                <li><a href="#skills-frontend" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50" data-section="skills-frontend"></a></li>
-                <!-- ... dan seterusnya ... -->
+                <!-- Skills Navigation Dots -->
+                <li class="lg:hidden"><a href="#skills-frontend" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50" data-section="skills-frontend"></a></li>
+                <li class="lg:hidden"><a href="#skills-backend" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50" data-section="skills-backend"></a></li>
+                <li class="hidden lg:block"><a href="#skills-desktop" class="section-dot block w-3 h-3 rounded-full bg-buff/50 dark:bg-teagreen/50" data-section="skills-desktop"></a></li>
+
+                <!-- Other navigation dots... -->
             </ul>
         </nav>
 
@@ -144,7 +146,6 @@
             <!-- =================================================================== -->
 
             <!-- ===== ABOUT SECTION - PART 1 (MOBILE/TABLET) ===== -->
-            <!-- lg:hidden -> Akan tersembunyi mulai dari 1024px ke atas -->
             <section id="about-1" class="min-h-screen w-full flex items-center justify-center snap-center bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-16 sm:py-0 lg:hidden">
                 <div class="container mx-auto px-6 lg:px-12"> 
                     <div class="flex flex-col items-center justify-center gap-8">
@@ -167,7 +168,6 @@
             </section>
 
             <!-- ===== ABOUT SECTION - PART 2 (MOBILE/TABLET) ===== -->
-            <!-- lg:hidden -> Akan tersembunyi mulai dari 1024px ke atas -->
             <section id="about-2" class="min-h-screen w-full flex items-center justify-center snap-center bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-20 md:py-0 lg:hidden">
                 <div class="container mx-auto px-6 text-center max-w-3xl">
                     <h3 class="text-2xl sm:text-3xl font-bold text-buff dark:text-teagreen mb-4 animate-fade-in-up-1">
@@ -184,11 +184,9 @@
                 </div>
             </section>
 
-
             <!-- =================================================================== -->
             <!-- ABOUT SECTION FOR DESKTOP (Visible at 1024px and up)                -->
             <!-- =================================================================== -->
-            <!-- hidden lg:flex -> Tersembunyi di bawah 1024px, muncul sebagai flex mulai dari 1024px -->
             <section id="about-desktop" class="hidden min-h-screen w-full lg:flex items-center justify-center snap-center bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-20 md:py-0">
                 <div class="container mx-auto px-6 lg:px-12">
                     <div class="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
@@ -221,8 +219,12 @@
                 </div>
             </section>
 
-            <!-- ===== SKILLS SECTION - PART 1: FRONTEND ===== -->
-            <section id="skills-frontend" class="min-h-screen w-full flex items-center justify-center snap-center py-20 md:py-0">
+            <!-- =================================================================== -->
+            <!--   SKILLS SECTIONS FOR MOBILE & TABLET (Visible below 1024px)        -->
+            <!-- =================================================================== -->
+
+            <!-- ===== SKILLS SECTION - PART 1: FRONTEND (MOBILE/TABLET) ===== -->
+            <section id="skills-frontend" class="min-h-screen w-full flex items-center justify-center snap-center py-20 md:py-0 lg:hidden">
                 <div class="container mx-auto text-center px-6">
                     <h2 class="text-3xl md:text-4xl font-bold text-buff dark:text-teagreen mb-3 animate-fade-in-up-1">
                         Keahlian Saya
@@ -268,10 +270,10 @@
                 </div>
             </section>
 
-            <!-- ===== SKILLS SECTION - PART 2: BACKEND & TOOLS (REVISED) ===== -->
-            <section id="skills-backend" class="min-h-screen w-full flex items-center justify-center snap-center py-20 md:py-0">
+            <!-- ===== SKILLS SECTION - PART 2: BACKEND & TOOLS (MOBILE/TABLET) ===== -->
+            <section id="skills-backend" class="min-h-screen w-full flex items-center justify-center snap-center py-20 md:py-0 lg:hidden">
                 <div class="container mx-auto text-center px-6">
-                    <div class="flex flex-row justify-center items-start gap-10 md:gap-24">
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-10 md:gap-24">
                         <div>
                             <h3 class="text-lg sm:text-xl font-semibold text-buff/90 dark:text-beige/90 mb-6 animate-fade-in-up-3">Backend</h3>
                             <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 animate-pop-in">
@@ -310,6 +312,97 @@
                 </div>
             </section>
 
+            <!-- =================================================================== -->
+            <!--     SKILLS SECTION FOR DESKTOP (Visible at 1024px and up)           -->
+            <!-- =================================================================== -->
+            <section id="skills-desktop" class="hidden min-h-screen w-full lg:flex items-center justify-center snap-center py-20 md:py-0">
+                <div class="container mx-auto text-center px-6">
+                    <h2 class="text-3xl md:text-4xl font-bold text-buff dark:text-teagreen mb-3 animate-fade-in-up-1">
+                        Keahlian Saya
+                    </h2>
+                    <p class="text-base text-buff/80 dark:text-beige/80 mb-12 max-w-3xl mx-auto animate-fade-in-up-2">
+                        Dari antarmuka hingga server, saya membangun pengalaman digital yang kohesif, intuitif, dan responsif.
+                    </p>
+                    <!-- PERUBAHAN DI SINI: Struktur diubah menjadi 3 kolom sejajar -->
+                    <div class="flex flex-col lg:flex-row items-start justify-center gap-16 xl:gap-24">
+                        <!-- Frontend Column -->
+                        <div class="animate-fade-in-up-3">
+                            <h3 class="text-xl font-semibold text-buff/90 dark:text-beige/90 mb-8">Frontend</h3>
+                            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                                <div class="group flex flex-col items-center justify-center gap-2 text-center w-20">
+                                    <div class="w-16 h-16 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
+                                        <svg class="w-8 h-8 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M1.946 3.014L3.4 18.006l8.601 2.98l8.595-2.974l1.45-14.992H1.946zM17 9h-4V5h8.5l-.5 4H17zm-5 1h4l.25 3.5L12 15.25v-1.5l-3.25-1.125L8.5 9h3.5zm-1 6.5l3.25 1.13L18.75 14H15l-4 1.5z"/></svg>
+                                    </div>
+                                    <p class="font-medium text-xs">HTML5</p>
+                                </div>
+                                <div class="group flex flex-col items-center justify-center gap-2 text-center w-20">
+                                    <div class="w-16 h-16 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
+                                        <svg class="w-8 h-8 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="m1.946 3.014 1.45 14.992L12 21l8.604-2.994L22.05 3.014H1.946zM17.5 8l-.25 3.5H12v-4h5.25l.25.5zm-9 0h4v4h-4.375L7.9 8.5l.6-.5zM12 17.5v-4H7.125l-.25 3.5L12 18.625V17.5z"/></svg>
+                                    </div>
+                                    <p class="font-medium text-xs">CSS3</p>
+                                </div>
+                                <div class="group flex flex-col items-center justify-center gap-2 text-center w-20">
+                                    <div class="w-16 h-16 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
+                                       <svg class="w-8 h-8 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm3.15 14.85c-.3.3-.71.45-1.15.45c-.46 0-.85-.14-1.16-.42c-.31-.28-.53-.66-.64-1.14h1.9c.07.22.18.39.35.5c.17.11.38.17.62.17c.32 0 .57-.08.75-.24c.18-.16.27-.38.27-.65c0-.23-.07-.43-.22-.58c-.15-.15-.42-.28-.82-.43l-.98-.37c-.72-.27-1.27-.56-1.63-.88c-.37-.32-.55-.74-.55-1.26c0-.52.2-1 .6-1.42c.4-.42.92-.63 1.57-.63c.47 0 .88.13 1.21.38c.33.25.56.58.67.98H14.1c-.06-.2-.16-.36-.29-.46c-.13-.1-.31-.15-.53-.15c-.27 0-.48.07-.63.22c-.15.15-.22.34-.22.56c0 .21.07.4.21.55c.14.15.4.28.81.43l.99.37c.8.3 1.41.62 1.8.96c.39.34.59.8.59 1.37c0 .63-.23 1.16-.7 1.59zM9.5 13.5H7.25V15H5.5V9h3.7c.74 0 1.34.18 1.8.54c.46.36.69.85.69 1.46c0 .6-.23 1.09-.68 1.45c-.45.36-1.05.55-1.71.55zm-1.75-1.5h1.5c.38 0 .67-.1.88-.3c.21-.2.31-.48.31-.83c0-.36-.1-.65-.3-.85c-.2-.2-.5-.3-s.9-.3h-1.5v2.28z"/></svg>
+                                    </div>
+                                    <p class="font-medium text-xs">JavaScript</p>
+                                </div>
+                                <div class="group flex flex-col items-center justify-center gap-2 text-center w-20">
+                                    <div class="w-16 h-16 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
+                                        <svg class="w-8 h-8 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8zm-5.04-10.41l8.07 4.66l-1.5 2.6l-8.07-4.66l1.5-2.6zm9.57-2.92l1.5 2.6l-8.07 4.66l-1.5-2.6l8.07-4.66zm-4.53 7.33a2.5 2.5 0 1 1 0-5a2.5 2.5 0 0 1 0 5z"/></svg>
+                                    </div>
+                                    <p class="font-medium text-xs">React</p>
+                                </div>
+                                <div class="group flex flex-col items-center justify-center gap-2 text-center w-20">
+                                    <div class="w-16 h-16 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
+                                        <svg class="w-8 h-8 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228c2.262 2.268 2.34 5.88.236 8.232l-8.48 8.482l-8.478-8.482c-2.104-2.353-2.025-5.974.238-8.238c2.263-2.264 5.888-2.34 8.244-.228zm.002 1.414c-1.854-1.66-4.59-1.635-6.432.207c-1.84 1.842-1.866 4.577-.023 6.42l6.455 6.456l6.455-6.456c1.843-1.843 1.817-4.578-.024-6.42c-1.842-1.842-4.577-1.867-6.43-.207z"/></svg>
+                                    </div>
+                                    <p class="font-medium text-xs">Tailwind CSS</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Backend Column -->
+                        <div class="animate-fade-in-up-3" style="animation-delay: 0.2s;">
+                            <h3 class="text-xl font-semibold text-buff/90 dark:text-beige/90 mb-8">Backend</h3>
+                            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                                <div class="group flex flex-col items-center justify-center gap-2 text-center w-20">
+                                    <div class="w-16 h-16 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
+                                        <svg class="w-8 h-8 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-9.2 6.34c-.2.49-.11.93.1 1.15L5.2 11.2c.22.22.65.23.95.03l1.8-1.2c.3-.2.72-.1.95.14l1.37 1.46c.23.24.64.25.96.02l1.9-1.37c.32-.23.76-.14 1 .15l1.6 1.86c.24.28.66.3.96.04l1.8-1.57c.3-.26.74-.2 1 .1l1.75 2.1c.26.3.2.75-.1 1a10 10 0 1 1-14.3-11.2z"/></svg>
+                                    </div>
+                                    <p class="font-medium text-xs">Node.js</p>
+                                </div>
+                                <div class="group flex flex-col items-center justify-center gap-2 text-center w-20">
+                                    <div class="w-16 h-16 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
+                                       <svg class="w-8 h-8 text-buff dark:text-teagreen" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" /></svg>
+                                    </div>
+                                    <p class="font-medium text-xs">Express.js</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tools Column -->
+                        <div class="animate-fade-in-up-3" style="animation-delay: 0.4s;">
+                            <h3 class="text-xl font-semibold text-buff/90 dark:text-beige/90 mb-8">Tools</h3>
+                            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                                <div class="group flex flex-col items-center justify-center gap-2 text-center w-20">
+                                    <div class="w-16 h-16 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
+                                        <svg class="w-8 h-8 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M23.954 11.22L12.78.047a.75.75 0 0 0-1.061 0L.495 11.22a.75.75 0 0 0 .53 1.28h3.977v8.25a.75.75 0 0 0 .75.75h12a.75.75 0 0 0 .75-.75v-8.25h3.977a.75.75 0 0 0 .53-1.28zM12 4.493l7.22 7.017h-3.22V19.5h-8V11.51H4.78L12 4.493z"/></svg>
+                                    </div>
+                                    <p class="font-medium text-xs">Git</p>
+                                </div>
+                                <div class="group flex flex-col items-center justify-center gap-2 text-center w-20">
+                                    <div class="w-16 h-16 bg-papayawhip dark:bg-gray-800 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:shadow-lg">
+                                       <svg class="w-8 h-8 text-buff dark:text-teagreen" fill="currentColor" viewBox="0 0 24 24"><path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v3h12V4H6zm0 5v9h12v-9H6zm4 2a1 1 0 1 1 0 2a1 1 0 0 1 0-2z"/></svg>
+                                    </div>
+                                    <p class="font-medium text-xs">Figma</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
             <!-- ===== PROJECTS SECTION - PART 1: INTRODUCTION ===== -->
             <section id="projects-intro" class="min-h-screen w-full flex items-center justify-center snap-center bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-20 md:py-0">
                 <div class="container mx-auto px-6 text-center">
@@ -323,7 +416,7 @@
             </section>
 
             <!-- ===== PROJECTS SECTION - PART 2: CARDS (CENTERING FIX) ===== -->
-            <section id="projects-cards" class="min-h-screen w-full flex items-center justify-center snap-center bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-20 md:py-24">
+            <section id="projects-cards" class="min-h-screen max-h-screen w-full flex items-center justify-center snap-center bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-20 md:py-24">
                 <div class="container mx-auto px-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
                         <div class="bg-cornsilk dark:bg-gray-900 rounded-lg shadow-xl overflow-hidden transform transition-all duration-500 hover:-translate-y-2 animate-fade-in-up-3">
@@ -559,7 +652,7 @@
                              </a>
                              <a href="mailto:emailanda@example.com" class="hover:text-buff dark:hover:text-teagreen transition-transform duration-300 ease-in-out hover:scale-110">
                                 <span class="sr-only">Email</span>
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25-2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path></svg>
                              </a>
                         </div>
                     </div>
