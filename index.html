@@ -14,37 +14,19 @@
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom Tailwind Configuration & CSS -->
-    <style type="text/tailwindcss">
-        @layer base {
-            html {
-                font-family: 'Inter', sans-serif;
-            }
-            body {
-                @apply bg-cornsilk text-buff;
-            }
-            .dark body {
-                @apply bg-gray-900 text-beige;
-            }
-        }
-        @layer utilities {
-            .neon-text-light {
-                text-shadow: 2px 2px 4px rgba(212, 163, 115, 0.2);
-            }
-            .dark .neon-text-dark {
-                text-shadow:
-                    0 0 5px #ccd5ae,
-                    0 0 10px #ccd5ae,
-                    0 0 15px #e9edc9;
-            }
-            .nav-item-hover {
-                @apply transition-transform duration-300 ease-in-out hover:scale-110;
-            }
+    <!-- Custom Tailwind Configuration -->
+    <style>
+        /* Dengan CDN, @apply tidak berfungsi. Semua style harus melalui kelas utilitas atau inline style. */
+        /* Blok ini sekarang hanya untuk style yang tidak bisa dicakup Tailwind, jika ada. */
+        /* Menambahkan font-family secara global sebagai fallback jika Tailwind butuh waktu untuk load. */
+        html {
+            font-family: 'Inter', sans-serif;
         }
     </style>
     
     <script>
         // Konfigurasi Kustom untuk Tailwind CSS
+        // Ini adalah cara yang benar untuk menambahkan warna kustom dengan CDN.
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -77,7 +59,7 @@
         }
     </script>
 </head>
-<body class="transition-colors duration-500">
+<body class="bg-cornsilk text-buff dark:bg-gray-900 dark:text-beige transition-colors duration-500">
 
     <!-- Main Container for Scroll Snap -->
     <div id="scroll-container" class="h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden">
@@ -90,10 +72,10 @@
                     <span id="logo-scrolled" class="absolute top-0 left-0 transition-opacity duration-300 ease-in-out opacity-0">MA.</span>
                 </a>
                 <nav id="nav-menu" class="hidden md:flex items-center space-x-8 transition-opacity duration-300 ease-in-out">
-                    <a href="#about-1" class="text-sm font-medium nav-item-hover">Tentang</a>
-                    <a href="#skills-frontend" class="text-sm font-medium nav-item-hover">Keahlian</a>
-                    <a href="#projects-intro" class="text-sm font-medium nav-item-hover">Proyek</a>
-                    <a href="#contact-intro" class="text-sm font-medium nav-item-hover">Kontak</a>
+                    <a href="#about-1" class="text-sm font-medium transition-transform duration-300 ease-in-out hover:scale-110">Tentang</a>
+                    <a href="#skills-frontend" class="text-sm font-medium transition-transform duration-300 ease-in-out hover:scale-110">Keahlian</a>
+                    <a href="#projects-intro" class="text-sm font-medium transition-transform duration-300 ease-in-out hover:scale-110">Proyek</a>
+                    <a href="#contact-intro" class="text-sm font-medium transition-transform duration-300 ease-in-out hover:scale-110">Kontak</a>
                 </nav>
                 <div class="flex items-center">
                     <button id="theme-toggle" class="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-buff dark:focus:ring-teagreen" aria-label="Ganti tema terang atau gelap">
@@ -137,7 +119,8 @@
             <section id="home" class="h-screen min-h-[100vh] w-full flex items-center justify-center snap-center">
                 <div class="container mx-auto text-center px-6">
                     <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold animate-fade-in-up-1">
-                        <span class="neon-text-light dark:neon-text-dark">Milnandy Abrar</span>
+                        <!-- Kelas neon-text-dark didefinisikan secara dinamis oleh Tailwind, jadi tidak perlu custom style -->
+                        <span class="[text-shadow:2px_2px_4px_rgba(212,163,115,0.2)] dark:[text-shadow:0_0_5px_#ccd5ae,0_0_10px_#ccd5ae,0_0_15px_#e9edc9]">Milnandy Abrar</span>
                     </h1>
                     <p class="mt-4 text-base sm:text-lg md:text-xl font-medium text-buff/80 dark:text-beige/80 animate-fade-in-up-2">Full-Stack Developer</p>
                     <p class="mt-5 max-w-lg mx-auto text-sm sm:text-base text-buff/70 dark:text-beige/70 animate-fade-in-up-3">
@@ -571,7 +554,7 @@
             </section>
 
             <!-- ===== CONTACT SECTION - PART 2: FORM (MOBILE/TABLET) ===== -->
-            <section id="contact-form" class="min-h-screen w-full flex items-center justify-center snap-center bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-20 md:py-0 lg:hidden">
+            <section id="contact-form" class="min-h-screen max-h-screen w-full flex items-center justify-center snap-center bg-papayawhip dark:bg-gray-800 transition-colors duration-500 py-20 md:py-0 lg:hidden">
                 <div class="container mx-auto px-6 flex justify-center">
                     <div class="w-full max-w-md bg-cornsilk dark:bg-gray-900 p-8 rounded-lg shadow-xl animate-pop-in">
                         <form action="#" method="POST">
@@ -765,59 +748,46 @@
             }, { passive: true });
 
             // --- Intersection Observer for Active Section Highlighting (Refined Logic) ---
-            const sectionMap = {
-                'about-desktop': ['about-1', 'about-2'],
-                'skills-desktop': ['skills-frontend', 'skills-backend'],
-                'projects-desktop': ['projects-intro', 'projects-cards'],
-                'contact-desktop': ['contact-intro', 'contact-form']
-            };
-
-            // Create a reverse map for easy lookup
-            const reverseSectionMap = {};
-            for (const desktopId in sectionMap) {
-                sectionMap[desktopId].forEach(mobileId => {
-                    reverseSectionMap[mobileId] = desktopId;
-                });
-            }
-
             const observerCallback = (entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        let activeId = entry.target.id;
-                        
-                        // If on a large screen, map the mobile ID to its corresponding desktop ID.
-                        // lg breakpoint in Tailwind is 1024px.
-                        if (window.innerWidth >= 1024) {
-                             if (reverseSectionMap[activeId]) {
-                                activeId = reverseSectionMap[activeId];
-                             }
+                    if (!entry.isIntersecting) return;
+
+                    const visibleSectionId = entry.target.id;
+                    const isDesktop = window.innerWidth >= 1024;
+
+                    const sectionMapping = {
+                        'about-desktop': ['about-1', 'about-2'],
+                        'skills-desktop': ['skills-frontend', 'skills-backend'],
+                        'projects-desktop': ['projects-intro', 'projects-cards'],
+                        'contact-desktop': ['contact-intro', 'contact-form'],
+                    };
+
+                    navDots.forEach(dot => {
+                        const dotFor = dot.dataset.section;
+                        let isActive = false;
+
+                        if (isDesktop) {
+                            // On desktop, find which group the visible section belongs to
+                            let activeGroup = visibleSectionId;
+                            for (const desktopId in sectionMapping) {
+                                if (sectionMapping[desktopId].includes(visibleSectionId)) {
+                                    activeGroup = desktopId;
+                                    break;
+                                }
+                            }
+                            isActive = dotFor === activeGroup;
+                        } else {
+                            // On mobile, the active dot is the one for the currently visible section
+                            isActive = dotFor === visibleSectionId;
                         }
 
-                        // Update all navigation dots
-                        navDots.forEach(dot => {
-                            let dotSection = dot.getAttribute('data-section');
-                            let isActive = (dotSection === activeId);
-
-                            // Handle group highlighting for mobile view
-                            if (window.innerWidth < 1024 && reverseSectionMap[activeId] && reverseSectionMap[dotSection] === reverseSectionMap[activeId]) {
-                                isActive = true;
-                            }
-                             
-                             // This is the correct logic to ensure the correct individual dot is active on mobile.
-                             if (window.innerWidth < 1024) {
-                                 isActive = (dotSection === entry.target.id);
-                             }
-
-
-                            // Apply active styles
-                            dot.classList.toggle('bg-buff', isActive);
-                            dot.classList.toggle('dark:bg-teagreen', isActive);
-                            dot.classList.toggle('scale-125', isActive);
-                            // Apply inactive styles
-                            dot.classList.toggle('bg-buff/50', !isActive);
-                            dot.classList.toggle('dark:bg-teagreen/50', !isActive);
-                        });
-                    }
+                        // Apply/Remove active styles
+                        dot.classList.toggle('bg-buff', isActive);
+                        dot.classList.toggle('dark:bg-teagreen', isActive);
+                        dot.classList.toggle('scale-125', isActive);
+                        dot.classList.toggle('bg-buff/50', !isActive);
+                        dot.classList.toggle('dark:bg-teagreen/50', !isActive);
+                    });
                 });
             };
 
@@ -826,9 +796,7 @@
                 threshold: 0.6 // 60% of the section must be visible
             });
 
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+            sections.forEach(section => observer.observe(section));
         });
     </script>
 </body>
